@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HelpHub AI - Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f6f3ed;
+            --dark-card: #2d3436;
+            --accent-green: #00b894;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #2d3436;
+        }
+
+        .custom-card {
+            border: none;
+            border-radius: 24px;
+            background: white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+        }
+
+        .hero-section {
+            background-color: var(--dark-card);
+            border-radius: 24px;
+            padding: 3rem;
+            color: white;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            padding: 1.5rem;
+            height: 100%;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .badge-custom {
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.75rem;
+            text-transform: capitalize;
+        }
+
+        .btn-outline-dark {
+            border-radius: 50px;
+            border-width: 2px;
+            font-weight: 600;
+            padding: 0.4rem 1.2rem;
+        }
+
+        .notification-item {
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 16px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .small-caps {
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 800;
+            font-size: 0.7rem;
+            color: var(--accent-green);
+        }
+        .header{
+    width: 100%;
+}
+/* Header */
+.container-header {
+    background: #eae7df;
+    padding: 15px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    margin-left: 60px;
+    cursor: pointer;
+    align-items: center;
+    gap: 10px;
+
+}
+
+.logo-box {
+    background: #1f9d8a;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+/* Nav */
+.nav {
+    display: flex;
+    gap: 25px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+    padding: 8px 15px;
+    border-radius: 20px;
+}
+
+.nav a.active {
+    background: #cfd8d3;
+    color: #1f9d8a;
+}
+
+/* Right side */
+.right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+
+
+/* Live community signals (left button) */
+.signal-btn {
+    border: none;
+    background: #f1efea;
+    padding: 10px 20px;
+    border-radius: 999px;
+    color: #6b6b6b;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* Join the platform (right button) */
+.join-btn {
+    border: none;
+    background: linear-gradient(135deg, #1fa38a, #0d7c6c);
+    color: white;
+    margin-right: 90px;
+    padding: 12px 26px;
+    border-radius: 999px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 16px;
+
+    /* THIS is the key part */
+    box-shadow:
+        0 8px 20px rgba(31, 163, 138, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Hover effect (important for premium feel) */
+.join-btn:hover {
+    transform: translateY(-1px);
+    box-shadow:
+        0 10px 25px rgba(31, 163, 138, 0.45),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.signal-btn:hover {
+    background: #e7e5df;
+}
+
+    </style>
+</head>
+<body>
+<header class="header">
+        <div class="container-header">
+
+            <!-- Logo -->
+            <div class="logo">
+                <div class="logo-box">H</div>
+                <h2>HelpHub AI</h2>
+            </div>
+
+            <!-- Nav Links -->
+            <nav class="nav">
+                <a href="./dashboard.html" class="active">Dashboard</a>
+                <a href="./explore.html">Explore</a>
+                <a href="./createrequest.html">Create Request</a>
+                <a href="./message.html">Message</a>
+                <a href="./profile.html">Profile</a>
+            </nav>
+
+            <!-- Right Side -->
+            <div class="right">
+                <button class="signal-btn">Notifications</button>
+                <button class="join-btn">Join the platform</button>
+            </div>
+
+        </div>
+    </header>
+    
+<div class="container py-5">
+    <header class="hero-section">
+        <p class="small-caps text-white-50">Dashboard</p>
+        <h1 class="display-4 fw-bold">Welcome back, Ayesha Khan.</h1>
+        <p class="lead opacity-75">Your command center for requests, AI insights, helper momentum, and live community activity.</p>
+    </header>
+
+    <div class="row g-4 mb-5">
+        <div class="col-md-3">
+            <div class="custom-card stat-card">
+                <p class="small-caps">Trust Score</p>
+                <div class="stat-value">92%</div>
+                <p class="text-muted small mb-0">Driven by solved requests and consistent support.</p>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="custom-card stat-card">
+                <p class="small-caps">Helping</p>
+                <div class="stat-value">2</div>
+                <p class="text-muted small mb-0">Requests where you are currently listed as a helper.</p>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="custom-card stat-card">
+                <p class="small-caps">Open Requests</p>
+                <div class="stat-value">2</div>
+                <p class="text-muted small mb-0">Community requests currently active across the feed.</p>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="custom-card stat-card">
+                <p class="small-caps">AI Pulse</p>
+                <div class="stat-value">1 trends</div>
+                <p class="text-muted small mb-0">Trend count detected in the latest request activity.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row g-4">
+        <div class="col-lg-8">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <div>
+                    <p class="small-caps">Recent Requests</p>
+                    <h2 class="fw-bold">What the community <br>needs right now</h2>
+                </div>
+                <button class="btn btn-outline-dark">Go to feed</button>
+            </div>
+
+            <div class="custom-card p-4 mb-4">
+                <div class="d-flex gap-2 mb-3">
+                    <span class="badge-custom bg-info bg-opacity-10 text-info">Web Development</span>
+                    <span class="badge-custom bg-danger bg-opacity-10 text-danger">High</span>
+                    <span class="badge-custom bg-success bg-opacity-10 text-success">Open</span>
+                </div>
+                <h4 class="fw-bold">Need help making my portfolio responsive before demo day</h4>
+                <p class="text-muted">My HTML/CSS portfolio breaks on tablets and I need layout guidance before tomorrow evening.</p>
+                <div class="d-flex gap-2 mb-4">
+                    <span class="badge bg-light text-dark rounded-pill border">HTML/CSS</span>
+                    <span class="badge bg-light text-dark rounded-pill border">Responsive</span>
+                    <span class="badge bg-light text-dark rounded-pill border">Portfolio</span>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <p class="mb-0 fw-bold">Sara Noor</p>
+                        <small class="text-muted">Karachi • 1 helper interested</small>
+                    </div>
+                    <button class="btn btn-outline-dark btn-sm">Open details</button>
+                </div>
+            </div>
+
+            <div class="custom-card p-4 mb-4">
+                <div class="d-flex gap-2 mb-3">
+                    <span class="badge-custom bg-warning bg-opacity-10 text-warning">Design</span>
+                    <span class="badge-custom bg-primary bg-opacity-10 text-primary">Medium</span>
+                    <span class="badge-custom bg-success bg-opacity-10 text-success">Open</span>
+                </div>
+                <h4 class="fw-bold">Looking for Figma feedback on a volunteer event poster</h4>
+                <p class="text-muted">I have a draft poster for a campus community event and want sharper hierarchy, spacing, and CTA copy.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <p class="mb-0 fw-bold">Ayesha Khan</p>
+                        <small class="text-muted">Lahore • 1 helper interested</small>
+                    </div>
+                    <button class="btn btn-outline-dark btn-sm">Open details</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4">
+            <div class="custom-card p-4 mb-4">
+                <p class="small-caps">AI Insights</p>
+                <h5 class="fw-bold mb-4">Suggested actions for you</h5>
+                <ul class="list-unstyled small">
+                    <li class="d-flex justify-content-between border-bottom py-2">
+                        <span>Most requested category</span>
+                        <span class="fw-bold">Web Development</span>
+                    </li>
+                    <li class="d-flex justify-content-between border-bottom py-2">
+                        <span>Your strongest trust driver</span>
+                        <span class="fw-bold">Design Ally</span>
+                    </li>
+                    <li class="py-2">
+                        <span class="d-block text-muted mb-1">AI says you can mentor in:</span>
+                        <span class="fw-bold">HTML/CSS, UI/UX, Career Guidance, Figma</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="custom-card p-4">
+                <p class="small-caps">Notifications</p>
+                <h5 class="fw-bold mb-4">Latest updates</h5>
+                
+                <div class="notification-item">
+                    <div class="d-flex justify-content-between align-items-start">
+                        <h6 class="small fw-bold mb-1">New helper matched to your responsive portfolio request</h6>
+                        <span class="badge bg-danger bg-opacity-10 text-danger rounded-pill x-small">Unread</span>
+                    </div>
+                    <small class="text-muted d-block">Match • 12 min ago</small>
+                </div>
+
+                <div class="notification-item">
+                    <div class="d-flex justify-content-between align-items-start">
+                        <h6 class="small fw-bold mb-1">Your trust score increased after a solved request</h6>
+                        <span class="badge bg-danger bg-opacity-10 text-danger rounded-pill x-small">Unread</span>
+                    </div>
+                    <small class="text-muted d-block">Reputation • 1 hr ago</small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

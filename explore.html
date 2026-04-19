@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>HelpHub AI | Explore</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%); }
+        
+.header{
+    width: 100%;
+}
+/* Header */
+.container-header {
+    background: whitesmoke;
+    padding: 15px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    margin-left: 60px;
+    cursor: pointer;
+    align-items: center;
+    gap: 10px;
+
+}
+
+.logo-box {
+    background: #1f9d8a;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+/* Nav */
+.nav {
+    display: flex;
+    gap: 25px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+    padding: 8px 15px;
+    border-radius: 20px;
+}
+
+.nav a.active {
+    background: #cfd8d3;
+    color: #1f9d8a;
+}
+
+/* Right side */
+.right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+
+
+/* Live community signals (left button) */
+.signal-btn {
+    border: none;
+    background: #f1efea;
+    padding: 10px 20px;
+    border-radius: 999px;
+    color: #6b6b6b;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* Join the platform (right button) */
+.join-btn {
+    border: none;
+    background: linear-gradient(135deg, #1fa38a, #0d7c6c);
+    color: white;
+    margin-right: 90px;
+    padding: 12px 26px;
+    border-radius: 999px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 16px;
+
+    /* THIS is the key part */
+    box-shadow:
+        0 8px 20px rgba(31, 163, 138, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Hover effect (important for premium feel) */
+.join-btn:hover {
+    transform: translateY(-1px);
+    box-shadow:
+        0 10px 25px rgba(31, 163, 138, 0.45),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.signal-btn:hover {
+    background: #e7e5df;
+}
+    </style>
+</head>
+  <header class="header">
+        <div class="container-header">
+
+            <!-- Logo -->
+            <div class="logo">
+                <div class="logo-box">H</div>
+                <h2>HelpHub AI</h2>
+            </div>
+
+            <!-- Nav Links -->
+            <nav class="nav">
+                <a href="./dashboard.html">Dashboard</a>
+                <a href="./explore.html" class="active">Explore</a>
+                <a href="./leaderboard.html" >Leaderboard</a>
+            </nav>
+
+
+        </div>
+     </header>
+<body class="min-h-screen p-4 md:p-8">
+
+    <div class="max-w-7xl mx-auto">
+        <header class="bg-[#1a1a1a] text-white rounded-3xl p-8 md:p-12 mb-8">
+            <p class="text-xs font-bold tracking-widest uppercase mb-4 opacity-70">Explore / Feed</p>
+            <h1 class="text-4xl md:text-6xl font-bold leading-tight max-w-3xl">
+                Browse help requests with filterable community context.
+            </h1>
+            <p class="mt-4 text-gray-400">Filter by category, urgency, skills, and location to surface the best matches.</p>
+        </header>
+
+        <div class="flex flex-col md:flex-row gap-8">
+            
+            <aside class="w-full md:w-1/3 bg-white/50 backdrop-blur-md rounded-3xl p-8 border border-white">
+                <p class="text-xs font-bold tracking-widest uppercase mb-2 text-emerald-600">Filters</p>
+                <h2 class="text-3xl font-bold mb-8">Refine the feed</h2>
+
+                <div class="space-y-6">
+                    <div>
+                        <label class="block text-sm font-semibold mb-2">Category</label>
+                        <select class="w-full p-4 rounded-xl border border-gray-200 bg-white appearance-none outline-none focus:ring-2 focus:ring-emerald-500">
+                            <option>All categories</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold mb-2">Urgency</label>
+                        <select class="w-full p-4 rounded-xl border border-gray-200 bg-white appearance-none outline-none focus:ring-2 focus:ring-emerald-500">
+                            <option>All urgency levels</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold mb-2">Skills</label>
+                        <input type="text" placeholder="React, Figma, Git/GitHub" class="w-full p-4 rounded-xl border border-gray-200 bg-white outline-none focus:ring-2 focus:ring-emerald-500">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold mb-2">Location</label>
+                        <input type="text" placeholder="Karachi, Lahore, Remote" class="w-full p-4 rounded-xl border border-gray-200 bg-white outline-none focus:ring-2 focus:ring-emerald-500">
+                    </div>
+                </div>
+            </aside>
+
+            <main class="w-full md:w-2/3 space-y-4">
+                
+                <div class="bg-white rounded-3xl p-8 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                    <div class="flex gap-2 mb-4">
+                        <span class="px-3 py-1 bg-emerald-50 text-emerald-700 text-xs font-bold rounded-full">Web Development</span>
+                        <span class="px-3 py-1 bg-red-50 text-red-600 text-xs font-bold rounded-full">High</span>
+                        <span class="px-3 py-1 bg-gray-100 text-gray-600 text-xs font-bold rounded-full">Solved</span>
+                    </div>
+                    
+                    <h3 class="text-xl font-bold mb-2">Need help making my portfolio responsive before demo day</h3>
+                    <p class="text-gray-600 mb-6 line-clamp-2">My HTML/CSS portfolio breaks on tablets and I need layout guidance before tomorrow evening.</p>
+                    
+                    <div class="flex gap-2 mb-6">
+                        <span class="px-3 py-1 border border-gray-200 text-gray-500 text-xs rounded-full">HTML/CSS</span>
+                        <span class="px-3 py-1 border border-gray-200 text-gray-500 text-xs rounded-full">Responsive</span>
+                    </div>
+
+                    <div class="flex justify-between items-end pt-6 border-t border-gray-50">
+                        <div>
+                            <p class="font-bold">Sara Noor</p>
+                            <p class="text-sm text-gray-400">Karachi • 1 helper interested</p>
+                        </div>
+                        <button class="px-6 py-2 border-2 border-gray-900 rounded-full font-bold hover:bg-gray-900 hover:text-white transition-colors text-sm">
+                            Open details
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-3xl p-8 shadow-sm border border-gray-100">
+                    <div class="flex gap-2 mb-4">
+                        <span class="px-3 py-1 bg-blue-50 text-blue-700 text-xs font-bold rounded-full">Design</span>
+                        <span class="px-3 py-1 bg-yellow-50 text-yellow-700 text-xs font-bold rounded-full">Medium</span>
+                        <span class="px-3 py-1 bg-emerald-50 text-emerald-700 text-xs font-bold rounded-full">Open</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Looking for Figma feedback on a volunteer event poster</h3>
+                    <p class="text-gray-600 mb-6">I have a draft poster for a campus community event and want sharper hierarchy and spacing.</p>
+                    
+                    <div class="flex justify-between items-end">
+                        <div>
+                            <p class="font-bold">Ayesha Khan</p>
+                            <p class="text-sm text-gray-400">Lahore • 1 helper interested</p>
+                        </div>
+                        <button class="px-6 py-2 border-2 border-gray-900 rounded-full font-bold text-sm">Open details</button>
+                    </div>
+                </div>
+
+            </main>
+        </div>
+    </div>
+
+</body>
+</html>

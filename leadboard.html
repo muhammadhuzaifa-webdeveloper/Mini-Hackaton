@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaderboard - HelpHub AI</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-page: #f5f0e6;
+            --dark-header: #282c2d;
+            --accent-teal: #18a08b;
+            --card-radius: 35px;
+            --inner-radius: 20px;
+        }
+
+        body {
+            background-color: var(--bg-page);
+            font-family: 'Inter', sans-serif;
+            color: #2d3436;
+        }
+
+        /* Hero Banner */
+        .hero-banner {
+            background-color: var(--dark-header);
+            color: white;
+            border-radius: var(--card-radius);
+            padding: 3.5rem 3rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .label-caps {
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            opacity: 0.6;
+            display: block;
+            margin-bottom: 0.8rem;
+        }
+
+        /* Main Cards */
+        .leaderboard-card {
+            background: #fff;
+            border: none;
+            border-radius: var(--card-radius);
+            padding: 2.5rem;
+            height: 100%;
+        }
+
+        /* Rankings List */
+        .rank-item {
+            border: 1px solid #f0f0f0;
+            border-radius: var(--inner-radius);
+            padding: 1.25rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            transition: transform 0.2s;
+        }
+
+        .rank-item:hover {
+            background-color: #fafafa;
+        }
+
+        .avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-right: 1rem;
+        }
+
+        /* Achievement Progress Card */
+        .achievement-subcard {
+            background-color: #fafafa;
+            border: 1px solid #f0f0f0;
+            border-radius: var(--inner-radius);
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .custom-progress {
+            height: 8px;
+            border-radius: 10px;
+            background-color: #eee;
+            overflow: hidden;
+            margin-top: 1rem;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #f39c12 0%, #18a08b 100%);
+        }
+
+        .small-text {
+            font-size: 0.85rem;
+            color: #777;
+        }
+           .header{
+    width: 100%;
+}
+/* Header */
+.container-header {
+    background: #eae7df;
+    padding: 15px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    margin-left: 60px;
+    cursor: pointer;
+    align-items: center;
+    gap: 10px;
+
+}
+
+.logo-box {
+    background: #1f9d8a;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+/* Nav */
+.nav {
+    display: flex;
+    gap: 25px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+    padding: 8px 15px;
+    border-radius: 20px;
+}
+
+.nav a.active {
+    background: #cfd8d3;
+    color: #1f9d8a;
+}
+
+/* Right side */
+.right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+
+
+/* Live community signals (left button) */
+.signal-btn {
+    border: none;
+    background: #f1efea;
+    padding: 10px 20px;
+    border-radius: 999px;
+    color: #6b6b6b;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* Join the platform (right button) */
+.join-btn {
+    border: none;
+    background: linear-gradient(135deg, #1fa38a, #0d7c6c);
+    color: white;
+    margin-right: 90px;
+    padding: 12px 26px;
+    border-radius: 999px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 16px;
+
+    /* THIS is the key part */
+    box-shadow:
+        0 8px 20px rgba(31, 163, 138, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Hover effect (important for premium feel) */
+.join-btn:hover {
+    transform: translateY(-1px);
+    box-shadow:
+        0 10px 25px rgba(31, 163, 138, 0.45),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.signal-btn:hover {
+    background: #e7e5df;
+}
+    </style>
+</head>
+<body>
+<header class="header">
+        <div class="container-header">
+
+            <!-- Logo -->
+            <div class="logo">
+                <div class="logo-box">H</div>
+                <h2>HelpHub AI</h2>
+            </div>
+
+            <!-- Nav Links -->
+            <nav class="nav">
+                <a href="./dashboard.html" >Dashboard</a>
+                <a href="./explore.html">Explore</a>
+                <a href="./leadboard.html"class="active">Leadboard</a>
+            </nav>
+
+            <!-- Right Side -->
+            <div class="right">
+                <button class="signal-btn">Notifications</button>
+                <button class="join-btn">Join the platform</button>
+            </div>
+
+        </div>
+    </header>
+<div class="container py-5">
+    
+    <header class="hero-banner">
+        <span class="label-caps">Leaderboard</span>
+        <h1 class="display-3 fw-bold mb-3">Recognize the people who keep the community moving.</h1>
+        <p class="lead opacity-75 mb-0">Trust score, contribution count, and badges create visible momentum for reliable helpers.</p>
+    </header>
+
+    <div class="row g-4">
+        
+        <div class="col-lg-6">
+            <div class="leaderboard-card">
+                <span class="label-caps text-success">Top Helpers</span>
+                <h2 class="fw-bold mb-4">Rankings</h2>
+
+                <div class="rank-item">
+                    <div class="avatar" style="background-color: #18a08b;">AK</div>
+                    <div class="flex-grow-1">
+                        <div class="fw-bold">#1 Ayesha Khan</div>
+                        <div class="small-text">Figma, UI/UX, HTML/CSS</div>
+                    </div>
+                    <div class="text-end">
+                        <div class="fw-bold">92%</div>
+                        <div class="small-text">31 contributions</div>
+                    </div>
+                </div>
+
+                <div class="rank-item">
+                    <div class="avatar" style="background-color: #2d3436;">HA</div>
+                    <div class="flex-grow-1">
+                        <div class="fw-bold">#2 Hassan Ali</div>
+                        <div class="small-text">JavaScript, React, Git/GitHub</div>
+                    </div>
+                    <div class="text-end">
+                        <div class="fw-bold">88%</div>
+                        <div class="small-text">24 contributions</div>
+                    </div>
+                </div>
+
+                <div class="rank-item">
+                    <div class="avatar" style="background-color: #e67e22;">SN</div>
+                    <div class="flex-grow-1">
+                        <div class="fw-bold">#3 Sara Noor</div>
+                        <div class="small-text">Python, Data Analysis</div>
+                    </div>
+                    <div class="text-end">
+                        <div class="fw-bold">74%</div>
+                        <div class="small-text">11 contributions</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-6">
+            <div class="leaderboard-card">
+                <span class="label-caps text-success">Badge System</span>
+                <h2 class="fw-bold mb-4">Trust and achievement</h2>
+
+                <div class="achievement-subcard">
+                    <div class="fw-bold mb-1">Ayesha Khan</div>
+                    <div class="small-text mb-2">Design Ally • Fast Responder • Top Mentor</div>
+                    <div class="custom-progress">
+                        <div class="progress-fill" style="width: 85%;"></div>
+                    </div>
+                </div>
+
+                <div class="achievement-subcard">
+                    <div class="fw-bold mb-1">Hassan Ali</div>
+                    <div class= "small-text mb-2">Code Rescuer • Bug Hunter</div>
+                    <div class="custom-progress">
+                        <div class="progress-fill" style="width: 70%;"></div>
+                    </div>
+                </div>
+
+                <div class="achievement-subcard">
+                    <div class="fw-bold mb-1">Sara Noor</div>
+                    <div class="small-text mb-2">Community Voice</div>
+                    <div class="custom-progress">
+                        <div class="progress-fill" style="width: 45%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

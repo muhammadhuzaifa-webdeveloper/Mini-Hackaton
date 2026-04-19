@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HelpHub AI | Notifications</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- <link rel="stylesheet" href="style.css"> -->
+  <!-- Custom CSS -->
+  <style>
+    body {
+      background: #f4f1ea;
+      font-family: Arial, sans-serif;
+    }
+.header{
+    width: 100%;
+}
+/* Header */
+.container-header {
+    background: whitesmoke;
+    padding: 15px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    margin-left: 60px;
+    cursor: pointer;
+    align-items: center;
+    gap: 10px;
+
+}
+
+.logo-box {
+    background: #1f9d8a;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+/* Nav */
+.nav {
+    display: flex;
+    gap: 25px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+    padding: 8px 15px;
+    border-radius: 20px;
+}
+
+.nav a.active {
+    background: #cfd8d3;
+    color: #1f9d8a;
+}
+
+/* Right side */
+.right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+
+
+/* Live community signals (left button) */
+.signal-btn {
+    border: none;
+    background: #f1efea;
+    padding: 10px 20px;
+    border-radius: 999px;
+    color: #6b6b6b;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* Join the platform (right button) */
+.join-btn {
+    border: none;
+    background: linear-gradient(135deg, #1fa38a, #0d7c6c);
+    color: white;
+    margin-right: 90px;
+    padding: 12px 26px;
+    border-radius: 999px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 16px;
+
+    /* THIS is the key part */
+    box-shadow:
+        0 8px 20px rgba(31, 163, 138, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Hover effect (important for premium feel) */
+.join-btn:hover {
+    transform: translateY(-1px);
+    box-shadow:
+        0 10px 25px rgba(31, 163, 138, 0.45),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.signal-btn:hover {
+    background: #e7e5df;
+}
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, #1f2d2b, #3c4b48);
+      color: white;
+      border-radius: 25px;
+      padding: 40px;
+    }
+
+    .hero h1 {
+      font-size: 38px;
+    }
+
+    .small-text {
+      font-size: 12px;
+      letter-spacing: 2px;
+      opacity: 0.7;
+    }
+
+    /* NOTIFICATION BOX */
+    .notifications-box {
+      background: #eae6de;
+      border-radius: 25px;
+      padding: 30px;
+    }
+
+    /* CARD */
+    .notification-card {
+      background: #f7f5f1;
+      border-radius: 15px;
+      padding: 20px;
+      border: 1px solid #ddd;
+    }
+
+    .notification-card p {
+      color: #777;
+      margin: 5px 0 0;
+      font-size: 14px;
+    }
+
+    /* BUTTON */
+    .btn-custom {
+      border-radius: 20px;
+      border: 1px solid #ccc;
+      background: #eee;
+    }
+
+    .btn-read {
+      background: #ddd;
+    }
+  </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container-header">
+
+            <!-- Logo -->
+            <div class="logo">
+                <div class="logo-box">H</div>
+                <h2>HelpHub AI</h2>
+            </div>
+
+            <!-- Nav Links -->
+            <nav class="nav">
+                <a href="./dashboard.html">Dashboard</a>
+                <a href="./explore.html">Explore</a>
+                <a href="./notification.html" class="active">Notification</a>
+            </nav>
+
+
+        </div>
+     </header>
+<div class="container py-4">
+
+  <!-- HERO -->
+  <div class="hero mb-4">
+    <p class="small-text">NOTIFICATIONS</p>
+    <h1>Stay updated on requests, helpers,<br>and trust signals.</h1>
+    <p class="text-light">
+      Track new matches, solved items, AI insights, and reputation changes in one place.
+    </p>
+  </div>
+
+  <!-- NOTIFICATIONS -->
+  <div class="notifications-box">
+
+    <p class="small-text text-success fw-bold">LIVE UPDATES</p>
+    <h2 class="mb-4">Notification feed</h2>
+
+    <!-- CARD 1 -->
+    <div class="notification-card d-flex justify-content-between align-items-center mb-3">
+      <div>
+        <h6 class="mb-1">New helper matched to your responsive portfolio request</h6>
+        <p>Match • 12 min ago</p>
+      </div>
+      <button class="btn btn-custom">Unread</button>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="notification-card d-flex justify-content-between align-items-center mb-3">
+      <div>
+        <h6 class="mb-1">Your trust score increased after a solved request</h6>
+        <p>Reputation • 1 hr ago</p>
+      </div>
+      <button class="btn btn-custom">Unread</button>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="notification-card d-flex justify-content-between align-items-center">
+      <div>
+        <h6 class="mb-1">AI Center detected rising demand for interview prep</h6>
+        <p>Insight • Today</p>
+      </div>
+      <button class="btn btn-custom btn-read">Read</button>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
