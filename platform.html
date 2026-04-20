@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Access Auth</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --dark-green: #0d2621;
+            --brand-teal: #00a18e;
+            --cream-bg: #f1ede3;
+            --card-light: #fbfaf5;
+        }
+
+        body {
+            background-color: var(--cream-bg);
+            min-height: 100vh;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* HEADER */
+        .container-header {
+            background: #eae7df;
+            padding: 15px 25px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-box {
+            background: #1f9d8a;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .nav {
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+            padding: 6px 12px;
+            border-radius: 20px;
+        }
+
+        .nav a:hover {
+            background: #dcdcd7;
+        }
+
+        /* MAIN WRAPPER */
+        .auth-wrapper {
+            max-width: 1000px;
+            margin: 50px auto;
+        }
+
+        .glass-card {
+            border-radius: 30px;
+            padding: 40px;
+            height: 100%;
+        }
+
+        /* LEFT PANEL */
+        .left-panel {
+            background-color: var(--dark-green);
+            color: #ffffff;
+        }
+
+        .left-panel h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+        }
+
+        .left-panel p {
+            color: #a1a1aa;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-list li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .feature-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--brand-teal);
+        }
+
+        /* RIGHT PANEL */
+        .right-panel {
+            background-color: var(--card-light);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+        }
+
+        .label-small {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #4b635e;
+        }
+
+        .form-control, .form-select {
+            border-radius: 12px;
+            padding: 10px;
+        }
+
+        .btn-submit {
+            background-color: var(--brand-teal);
+            color: white;
+            border-radius: 50px;
+            padding: 12px;
+            font-weight: 600;
+            border: none;
+            transition: 0.2s;
+        }
+
+        .btn-submit:hover {
+            background-color: #008a7a;
+            transform: translateY(-2px);
+        }
+
+        /* RESPONSIVE */
+        @media(max-width: 768px){
+            .left-panel h1 {
+                font-size: 2rem;
+            }
+
+            .container-header {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="container-header">
+
+        <div class="logo">
+            <div class="logo-box">H</div>
+            <h5 class="m-0">HelpHub AI</h5>
+        </div>
+
+        <nav class="nav">
+            <a href="#">Home</a>
+            <a href="#">Explore</a>
+            <a href="#">Leaderboard</a>
+        </nav>
+
+    </div>
+</header>
+
+<!-- MAIN -->
+<div class="container auth-wrapper">
+    <div class="row g-4">
+
+        <!-- LEFT -->
+        <div class="col-lg-6">
+            <div class="glass-card left-panel">
+                <div class="label-small text-secondary mb-2">Community Access</div>
+                <h1>Enter the support network.</h1>
+                <p>Choose a demo identity and start exploring the platform.</p>
+
+                <ul class="feature-list mt-3">
+                    <li>Role-based entry system</li>
+                    <li>Dashboard & community access</li>
+                    <li>LocalStorage session</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="col-lg-6">
+            <div class="glass-card right-panel">
+                <div class="label-small mb-2">Login / Signup</div>
+                <h4 class="fw-bold mb-4">Authenticate your profile</h4>
+
+                <form>
+                    <div class="mb-3">
+                        <label class="form-label">Select demo user</label>
+                        <select class="form-select">
+                            <option>Ayesha Khan</option>
+                            <option>Sara Noor</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Role</label>
+                        <select class="form-select">
+                            <option>Both</option>
+                            <option>Helper</option>
+                            <option>Requester</option>
+                        </select>
+                    </div>
+
+                    <div class="row g-3 mb-3">
+                        <div class="col-md-6">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-control">
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label">Password</label>
+                            <input type="password" class="form-control">
+                        </div>
+                    </div>
+
+                    <button class="btn btn-submit w-100">Continue</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
